@@ -228,34 +228,3 @@ int main() {
     
     return 0;
 }
-
-/*
- ALGORITHM EXPLANATION:
- 
- This implementation finds ALL possible topological orderings using backtracking:
- 
- 1. CYCLE DETECTION:
-    - First checks if the graph has cycles using DFS
-    - Uses three-color system: WHITE, GRAY, BLACK
-    - If a back edge is found (GRAY vertex encountered), cycle exists
- 
- 2. BACKTRACKING ALGORITHM:
-    - Tries to place vertices one by one in topological order
-    - At each position, considers all vertices that can be placed
-    - A vertex can be placed if all its predecessors are already placed
-    - Uses recursion to explore all possibilities
-    - Backtracks when a complete ordering is found or no valid placement exists
- 
- 3. CONSTRAINT CHECKING:
-    - For each vertex, checks if all incoming edges come from already placed vertices
-    - This ensures the topological ordering constraint is maintained
- 
- 4. SOLUTION GENERATION:
-    - When all vertices are placed, prints the current ordering
-    - Continues backtracking to find all other possible orderings
- 
- TIME COMPLEXITY: O(n! × n²) in worst case (all permutations checked)
- SPACE COMPLEXITY: O(n) for recursion stack and auxiliary arrays
- 
- Note: For large graphs, the number of topological orderings can be exponential.
-*/
